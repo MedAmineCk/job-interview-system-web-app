@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="shortcut icon" href="/notoriety-logo.png" type="image/x-icon">
+    <link rel="icon" href="/notoriety-logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel='stylesheet'
+        href='https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css'>
+    <link rel="preload" href='css/mdc.min.css' as="style" onload="this.rel='stylesheet'">
+    <script rel="preload" src='js/mdc.min.js'></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery.min.js"></script>
+</head>
+
+<body>
+    <!--keyboard start-->
+    <div id="keyboard" class="keyboard">
+        <div class="container">
+            <div class="char">
+                <button>A</button>
+                <button>Z</button>
+                <button>E</button>
+                <button>R</button>
+                <button>T</button>
+                <button>Y</button>
+                <button>U</button>
+                <button>I</button>
+                <button>O</button>
+                <button>P</button>
+                <button>Q</button>
+                <button>S</button>
+                <button>D</button>
+                <button>F</button>
+                <button>G</button>
+                <button>H</button>
+                <button>J</button>
+                <button>K</button>
+                <button>L</button>
+                <button>M</button>
+                <button>W</button>
+                <button>X</button>
+                <button>C</button>
+                <button>V</button>
+                <button>B</button>
+                <button>N</button>
+                <button>é</button>
+                <button>è</button>
+                <button>ç</button>
+                <button>à</button>
+                <button>@</button>
+                <button>+</button>
+                <button class="space">space</button>
+                <button>,</button>
+                <button>.</button>
+            </div>
+            <div class="num">
+                <button>7</button>
+                <button>8</button>
+                <button>9</button>
+                <button>4</button>
+                <button>5</button>
+                <button>6</button>
+                <button>1</button>
+                <button>2</button>
+                <button>3</button>
+                <button>0</button>
+                <button class="delete">delete</button>
+            </div>
+        </div>
+    </div>
+    <audio id="audio" src="click.mp3"></audio>
+    <!--keyboard end-->
+    <script>
+        $.ready(function () {
+
+        })
+    </script>
+    <header>
+        <div class="icon">
+            <img src="img/notoriety-white-logo-.png" alt="">
+        </div>
+    </header>
+    <nav>
+        <div class="tracker">
+            <div class="item active validated" data-value="1">1</div>
+            <div class="item validated" data-value="2" onclick="next()">2</div>
+            <div class="item" data-value="3">3</div>
+            <div class="item" data-value="4">4</div>
+            <div class="item" data-value="5">5</div>
+            <div class="item" data-value="6">Fin</div>
+        </div>
+    </nav>
+    <section class="main-container">
+        <article class="welcome" id="article">
+            <h1>Bienvenue chez Notoriety</h1>
+            <p>Veuillez saisir vos informations avant de passer votre entretien.</p>
+            <button id="Commencer" class="next mdc-fab mdc-fab--extended mdc-ripple-upgraded" aria-label="Create">
+                <i class="mdc-fab__icon material-icons">play_arrow</i>
+                <span class="mdc-fab__label">Commencer</span>
+            </button>
+        </article>
+        <article class="coordonnees">
+            <button class="return mdc-button">
+                <i class="material-icons mdc-button__icon" aria-hidden="true">keyboard_backspace</i>
+                <span class="mdc-button__label">Retour</span>
+            </button>
+            <h1 class="headline">Coordonnées</h1>
+            <div class="data-field">
+                <div class="firstName mdc-text-field mdc-text-field--outlined">
+                    <input id="firstName" class="mdc-text-field__input" id="text-field-hero-input" required>
+                    <div class="mdc-notched-outline">
+                        <div class="mdc-notched-outline__leading"></div>
+                        <div class="mdc-notched-outline__notch">
+                            <label for="text-field-hero-input" class="mdc-floating-label">Nom</label>
+                        </div>
+                        <div class="mdc-notched-outline__trailing"></div>
+                    </div>
+                </div>
+                <div class="lastName mdc-text-field mdc-text-field--outlined">
+                    <input id="lastName" class="mdc-text-field__input" id="text-field-hero-input" required>
+                    <div class="mdc-notched-outline">
+                        <div class="mdc-notched-outline__leading"></div>
+                        <div class="mdc-notched-outline__notch">
+                            <label for="text-field-hero-input" class="mdc-floating-label">Prénom</label>
+                        </div>
+                        <div class="mdc-notched-outline__trailing"></div>
+                    </div>
+                </div>
+                <div class="phone mdc-text-field mdc-text-field--outlined">
+                    <input id="phone" class="mdc-text-field__input phone" id="text-field-hero-input" required
+                        maxlength="10" minlength="10" placeholder="0612546532">
+                    <div class="mdc-notched-outline">
+                        <div class="mdc-notched-outline__leading"></div>
+                        <div class="mdc-notched-outline__notch">
+                            <label for="text-field-hero-input" class="mdc-floating-label">Téléphone</label>
+                        </div>
+                        <div class="mdc-notched-outline__trailing"></div>
+                    </div>
+                </div>
+                <div class="email mdc-text-field mdc-text-field--outlined">
+                    <input id="email" class="mdc-text-field__input" id="text-field-hero-input" required>
+                    <div class="mdc-notched-outline">
+                        <div class="mdc-notched-outline__leading"></div>
+                        <div class="mdc-notched-outline__notch">
+                            <label for="text-field-hero-input" class="mdc-floating-label">email</label>
+                        </div>
+                        <div class="mdc-notched-outline__trailing"></div>
+                    </div>
+                </div>
+                <div class="cin mdc-text-field mdc-text-field--outlined">
+                    <input id="cin" class="mdc-text-field__input" id="text-field-hero-input" required>
+                    <div class="mdc-notched-outline">
+                        <div class="mdc-notched-outline__leading"></div>
+                        <div class="mdc-notched-outline__notch">
+                            <label for="text-field-hero-input" class="mdc-floating-label">CIN</label>
+                        </div>
+                        <div class="mdc-notched-outline__trailing"></div>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" id="validatePInfo" class="next mdc-fab mdc-fab--extended mdc-ripple-upgraded"
+                aria-label="Create">
+                <span class="mdc-fab__label">suivant</span>
+                <i class="mdc-fab__icon material-icons">navigate_next</i>
+            </button>
+        </article>
+        <article class="experiences">
+            <button class="return mdc-button">
+                <i class="material-icons mdc-button__icon" aria-hidden="true">keyboard_backspace</i>
+                <span class="mdc-button__label">Retour</span>
+            </button>
+            <h1 class="headline">expériences</h1>
+            <div class="data-field quiz">
+                <div class="q1">
+                    <p>Avez-vous déjà travaillé dans un centre d’appel ?</p>
+                    <div class="radio">
+                        <div class="mdc-form-field">
+                            <div class="mdc-radio">
+                                <input value="non" class="mdc-radio__native-control" type="radio" id="radio-2"
+                                    name="is_expert" checked>
+                                <div class="mdc-radio__background">
+                                    <div class="mdc-radio__outer-circle"></div>
+                                    <div class="mdc-radio__inner-circle"></div>
+                                </div>
+                            </div>
+                            <label for="radio-2">Non</label>
+                        </div>
+                        <div class="mdc-form-field">
+                            <div class="mdc-radio">
+                                <input value="oui" class="mdc-radio__native-control" type="radio" id="radio-1"
+                                    name="is_expert">
+                                <div class="mdc-radio__background">
+                                    <div class="mdc-radio__outer-circle"></div>
+                                    <div class="mdc-radio__inner-circle"></div>
+                                </div>
+                            </div>
+                            <label for="radio-1">Oui</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="q2">
+                    <p>Pour combien de temps ?</p>
+                    <div class="choix">
+                        <div class="mdc-form-field">
+                            <div class="mdc-radio">
+                                <input value="Moins de 6 mois" class="mdc-radio__native-control" type="radio"
+                                    id="Moins_de_6_mois" name="exp_time" checked>
+                                <div class="mdc-radio__background">
+                                    <div class="mdc-radio__outer-circle"></div>
+                                    <div class="mdc-radio__inner-circle"></div>
+                                </div>
+                            </div>
+                            <label for="Moins_de_6_mois">Moins de 6 mois</label>
+                        </div>
+                        <div class="mdc-form-field">
+                            <div class="mdc-radio">
+                                <input value="Plus de 6 mois" class="mdc-radio__native-control" type="radio"
+                                    id="Plus_de_6_mois" name="exp_time">
+                                <div class="mdc-radio__background">
+                                    <div class="mdc-radio__outer-circle"></div>
+                                    <div class="mdc-radio__inner-circle"></div>
+                                </div>
+                            </div>
+                            <label for="Plus_de_6_mois">Plus de 6 mois</label>
+                        </div>
+                        <div class="mdc-form-field">
+                            <div class="mdc-radio">
+                                <input value="Plus d’un an" class="mdc-radio__native-control" type="radio"
+                                    id="Plus_de_un_an" name="exp_time">
+                                <div class="mdc-radio__background">
+                                    <div class="mdc-radio__outer-circle"></div>
+                                    <div class="mdc-radio__inner-circle"></div>
+                                </div>
+                            </div>
+                            <label for="Plus_de_un_an">Plus d’un an</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="q3" style="padding-bottom: 20px">
+                    <p>- Quelle fonction avez-vous assuré ?</p>
+                    <div id="jobType" class="ddm mdc-select mdc-select--outlined">
+                        <input id="post_id" type="hidden" name="enhanced-select">
+                        <i class="mdc-select__dropdown-icon"></i>
+                        <div class="mdc-select__selected-text"></div>
+                        <div class="mdc-select__menu mdc-menu mdc-menu-surface demo-width-class" style="width: 400px">
+                            <ul class="mdc-list">
+                                <li class="mdc-list-item" data-value="Téléconseiller">
+                                    Téléconseiller
+                                </li>
+                                <li class="mdc-list-item" data-value="télévendeur">
+                                    télévendeur
+                                </li>
+                                <li class="mdc-list-item" data-value="coach">
+                                    coach
+                                </li>
+                                <li class="mdc-list-item" data-value="Sup">
+                                    Sup
+                                </li>
+                                <li class="mdc-list-item" data-value="Formateur">
+                                    Formateur
+                                </li>
+                                <li class="mdc-list-item" data-value="qualiticien">
+                                    qualiticien
+                                </li>
+                                <li id="job_type-autre_list" class="mdc-list-item" data-value="autre">
+                                    Autre..
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="mdc-notched-outline">
+                            <div class="mdc-notched-outline__leading"></div>
+                            <div class="mdc-notched-outline__notch">
+                                <label class="mdc-floating-label">Choisis une fonction</label>
+                            </div>
+                            <div class="mdc-notched-outline__trailing"></div>
+                        </div>
+                    </div>
+                    <div class="job_autre mdc-text-field mdc-text-field--outlined">
+                        <input id="job_autre-input" class="mdc-text-field__input" id="text-field-hero-input">
+                        <div class="mdc-notched-outline">
+                            <div class="mdc-notched-outline__leading"></div>
+                            <div class="mdc-notched-outline__notch">
+                                <label for="text-field-hero-input" class="mdc-floating-label">Autre</label>
+                            </div>
+                            <div class="mdc-notched-outline__trailing"></div>
+                        </div>
+                    </div>
+                    <script>
+                        $("#job_autre-input").keyup(function (event) {
+                            var stt = $(this).val();
+                            console.log(stt)
+                            $("#post_id").attr('value', stt);
+                        });
+                    </script>
+                </div>
+                <div class="q4" style="padding-bottom: 20px; border-bottom: none;">
+                    <p>- Citez le lieu où vous avez exercé</p>
+                    <div class="lieu mdc-text-field mdc-text-field--outlined">
+                        <input id="where" class="mdc-text-field__input" id="text-field-hero-input" required>
+                        <div class="mdc-notched-outline">
+                            <div class="mdc-notched-outline__leading"></div>
+                            <div class="mdc-notched-outline__notch">
+                                <label for="text-field-hero-input" class="mdc-floating-label">le lieu</label>
+                            </div>
+                            <div class="mdc-notched-outline__trailing"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button id="validateEinfo" class="next mdc-fab mdc-fab--extended mdc-ripple-upgraded" aria-label="Create">
+                <span class="mdc-fab__label">suivant</span>
+                <i class="mdc-fab__icon material-icons">navigate_next</i>
+            </button>
+        </article>
+        <article class="source">
+            <button class="return mdc-button">
+                <i class="material-icons mdc-button__icon" aria-hidden="true">keyboard_backspace</i>
+                <span class="mdc-button__label">Retour</span>
+            </button>
+            <h1 class="headline">Source</h1>
+            <div class="data-field quiz why">
+                <div class="q1">
+                    <p>-Comment avez-vous pris connaissance de notre centre ? </p>
+                    <div class="source-select mdc-select mdc-select--outlined">
+                        <input id="how" type="hidden" name="enhanced-select">
+                        <i class="mdc-select__dropdown-icon"></i>
+                        <div class="mdc-select__selected-text"></div>
+                        <div class="mdc-select__menu mdc-menu mdc-menu-surface demo-width-class" valid=true
+                            aria-required=true>
+                            <ul class="mdc-list">
+                                <li class="mdc-list-item" data-value="Facebook">
+                                    Facebook
+                                </li>
+                                <li class="mdc-list-item" data-value="Avito">
+                                    Avito
+                                </li>
+                                <li class="mdc-list-item" data-value="Anapec">
+                                    Anapec
+                                </li>
+                                <li class="mdc-list-item" data-value="Un ami qui travaille chez nous">
+                                    Un ami qui travaille chez nous
+                                </li>
+                                <li class="mdc-list-item" data-value=" Un ami de l’extérieure">
+                                    Un ami de l’extérieure
+                                </li>
+                                <li class="mdc-list-item" data-value="un évènement">
+                                    un évènement
+                                </li>
+                                <li class="mdc-list-item" data-value="autre">
+                                    Autre..
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="mdc-notched-outline">
+                            <div class="mdc-notched-outline__leading"></div>
+                            <div class="mdc-notched-outline__notch">
+                                <label class="mdc-floating-label">Choisi une Source</label>
+                            </div>
+                            <div class="mdc-notched-outline__trailing"></div>
+                        </div>
+                    </div>
+                    <div class="source-autre mdc-text-field mdc-text-field--outlined">
+                        <input id="source-input" class="mdc-text-field__input" id="text-field-hero-input">
+                        <div class="mdc-notched-outline">
+                            <div class="mdc-notched-outline__leading"></div>
+                            <div class="mdc-notched-outline__notch">
+                                <label for="text-field-hero-input" class="mdc-floating-label">Autre</label>
+                            </div>
+                            <div class="mdc-notched-outline__trailing"></div>
+                        </div>
+                    </div>
+                    <script>
+                        $("#source-input").keyup(function (event) {
+                            var stt = $(this).val();
+                            console.log(stt);
+                            $("#how").attr('value', stt);
+                        });
+                    </script>
+                </div>
+                <div class="q1">
+                    <p>Pourquoi avez-vous choisi notre centre ?</p>
+                    <div class="whyInput mdc-text-field mdc-text-field--outlined">
+                        <input id="why" class="mdc-text-field__input" id="text-field-hero-input">
+                        <div class="mdc-notched-outline">
+                            <div class="mdc-notched-outline__leading"></div>
+                            <div class="mdc-notched-outline__notch">
+                                <label for="text-field-hero-input" class="mdc-floating-label">Pourquoi Nous</label>
+                            </div>
+                            <div class="mdc-notched-outline__trailing"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button id="validateSinfo" class="next mdc-fab mdc-fab--extended mdc-ripple-upgraded" aria-label="Create">
+                <span class="mdc-fab__label">Suivent</span>
+                <i class="mdc-fab__icon material-icons">navigate_next</i>
+            </button>
+        </article>
+        <article class="data">
+            <button class="return mdc-button">
+                <i class="material-icons mdc-button__icon" aria-hidden="true">keyboard_backspace</i>
+                <span class="mdc-button__label">Retour</span>
+            </button>
+            <h1 class="headline">Validation</h1>
+            <div class="data-container">
+                <div class="mdc-data-table">
+                    <table class="mdc-data-table__table" aria-label="Dessert calories">
+                        <thead>
+                            <tr class="mdc-data-table__header-row">
+                                <th class="mdc-data-table__header-cell" role="columnheader" scope="col">Questions</th>
+                                <th class="mdc-data-table__header-cell" role="columnheader" scope="col">réponses</th>
+                            </tr>
+                        </thead>
+                        <tbody class="mdc-data-table__content">
+                            <tr class="mdc-data-table__row">
+                                <td class="mdc-data-table__cell">Nom</td>
+                                <td id="data_nom" class="mdc-data-table__cell mdc-data-table__cell--numeric">example
+                                </td>
+                            </tr>
+                            <tr class="mdc-data-table__row">
+                                <td class="mdc-data-table__cell">Prénom</td>
+                                <td id="data_prenom" class="mdc-data-table__cell mdc-data-table__cell--numeric">example
+                                </td>
+                            </tr>
+                            <tr class="mdc-data-table__row">
+                                <td class="mdc-data-table__cell">Téléphone</td>
+                                <td id="data_telephone" class="mdc-data-table__cell mdc-data-table__cell--numeric">
+                                    0621548549</td>
+                            </tr>
+                            <tr class="mdc-data-table__row">
+                                <td class="mdc-data-table__cell">Adresse mail</td>
+                                <td id="data_email" class="mdc-data-table__cell mdc-data-table__cell--numeric">
+                                    email@gmail.com</td>
+                            </tr>
+                            <tr class="mdc-data-table__row">
+                                <td class="mdc-data-table__cell">Avez-vous déjà travaillé dans un centre d’appel</td>
+                                <td id="data_is_expert" class="mdc-data-table__cell mdc-data-table__cell--numeric">Oui
+                                </td>
+                            </tr>
+                            <tr class="mdc-data-table__row">
+                                <td class="mdc-data-table__cell">Pour combien de temps ? </td>
+                                <td id="data_expert_time" class="mdc-data-table__cell mdc-data-table__cell--numeric">
+                                    plus de 6mois</td>
+                            </tr>
+                            <tr class="mdc-data-table__row">
+                                <td class="mdc-data-table__cell">Quelle fonction avez-vous assuré ?</td>
+                                <td id="data_job_type" class="mdc-data-table__cell mdc-data-table__cell--numeric">
+                                    Formateur</td>
+                            </tr>
+                            <tr class="mdc-data-table__row">
+                                <td class="mdc-data-table__cell">Citez le lieu où vous avez exercé </td>
+                                <td id="data_where" class="mdc-data-table__cell mdc-data-table__cell--numeric">oujda
+                                </td>
+                            </tr>
+                            <tr class="mdc-data-table__row">
+                                <td class="mdc-data-table__cell">Comment avez-vous pris connaissance de notre centre ?
+                                </td>
+                                <td id="data_how" class="mdc-data-table__cell mdc-data-table__cell--numeric">Un ami qui
+                                    travaille
+                                    chez nous</td>
+                            </tr>
+                            <tr class="mdc-data-table__row">
+                                <td class="mdc-data-table__cell">Pourquoi avez-vous choisi notre centre ?</td>
+                                <td id="data_why" class="mdc-data-table__cell mdc-data-table__cell--numeric">
+                                    Lorem ipsum dolor sit amet consectetur,!</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <button class="next mdc-fab mdc-fab--extended mdc-ripple-upgraded" aria-label="Create"
+                onclick="validate();">
+                <span class="mdc-fab__label">Valider</span>
+                <i class="mdc-fab__icon material-icons">navigate_next</i>
+            </button>
+        </article>
+        <article class="Fin">
+            <canvas style="position: absolute" id="canvas" width="1045" height="757"></canvas>
+            <h1>Merci</h1>
+            <div class="finale-desc">
+                <p class="finale">Merci d'avoir rempli le formulaire. <br>
+                    Notre chargée de recrutement vous appellera dans quelques instants.
+                    Veuillez patienter s'il vous plait.</p>
+            </div>
+            <div class="onClickHandler" onclick="window.location.reload()"></div>
+        </article>
+    </section>
+    <script src="js/script.js"></script>
+    <script src="js/merci.js"></script>
+</body>
+
+</html>

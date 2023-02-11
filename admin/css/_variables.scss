@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+$colors:(bg: #F4F4F4,
+    green: #4CAF50,
+    blue: #2196F3,
+    red: #F35050,
+    black: #555555,
+    black-thin: #646464,
+    black-thiner: #cdcdda,
+    gray: #607D8B,
+    orangered: #B71C1C,
+    yellow: #F9A825);
+$padding: 10px;
+$border: 1px solid #607D8B;
+$border-radius: 4px;
+
+@function colors($color-name) {
+    @return map-get($map: $colors, $key: $color-name);
+}
+
+$tablet: 1134px;
+$mobile: 500px;
+
+@mixin mobile {
+    @media (max-width: #{$mobile}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (max-width: #{$tablet}) {
+        @content;
+    }
+}
+
+//******** Fonts ********//
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');

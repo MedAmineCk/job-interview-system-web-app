@@ -1,0 +1,208 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+.O {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.H {
+  display: none;
+}
+
+a {
+  text-decoration: none;
+  color: #2e43ff;
+  cursor: pointer;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+body::-webkit-scrollbar,
+.scroll::-webkit-scrollbar {
+  width: 10px;
+  background: #000;
+}
+
+body::-webkit-scrollbar-track,
+.scroll::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0px 0px 6px rgba(0, 0, 0, 0.3);
+  background-color: #f5f5f5;
+}
+
+body::-webkit-scrollbar-thumb,
+.scroll::-webkit-scrollbar-thumb {
+  background-color: #444c53;
+}
+
+.mdc-floating-label {
+  color: #018786;
+}
+
+.mdc-select:not(.mdc-select--disabled).mdc-select--focused .mdc-floating-label {
+  color: #018786;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body header {
+  grid-area: header;
+  width: 100%;
+  height: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+}
+
+body header .logo {
+  height: 60px;
+}
+
+body header .logo img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+body main {
+  width: 100%;
+  height: 100vh;
+  min-height: 700px;
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "info login";
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+}
+
+body main section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body main section h1 {
+  font-size: 45px;
+  margin-bottom: 40px;
+}
+
+body main section.info {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: info;
+  background-color: #009688;
+  color: #fff;
+  background-image: url(../img/SVG/pattern.svg), linear-gradient(34deg, #4caf50 0%, #009688 35%);
+  background-size: cover;
+}
+
+body main section.login {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: login;
+}
+
+body main section.login h1 {
+  color: #009688;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body main section.login form {
+  text-align: center;
+}
+
+body main section.login form .input {
+  width: 400px;
+  height: 45px;
+  background: #ccc;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+body main section.login form .input label {
+  width: 45px;
+  height: 45px;
+  position: absolute;
+  background: transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body main section.login form .input label i {
+  color: #616161;
+}
+
+body main section.login form .input input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  padding-left: 45px;
+  outline: none;
+}
+
+body main section.login form button {
+  background-color: #009688;
+  width: 150px;
+  height: 45px;
+  border: none;
+  border-radius: 45px;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  margin: 0 auto;
+  text-align: center;
+  outline: none;
+}
